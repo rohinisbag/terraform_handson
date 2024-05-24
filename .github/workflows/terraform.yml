@@ -14,7 +14,7 @@ jobs:
 
     env:
       TF_VERSION: 1.1.0  # Specify your Terraform version here
-      TF_WORKING_DIR: . # Path to your Terraform code directory
+      TF_WORKING_DIR: ./excerise4/ # Path to your Terraform code directory
 
     steps:
     - name: Checkout code
@@ -45,7 +45,7 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR }}
       run: terraform plan -out=tfplan
 
-    - name: Apply Terraform
+    - name: apply Terraform
       if: github.ref == 'refs/heads/master'  # Only apply on the main branch
       working-directory: ${{ env.TF_WORKING_DIR }}
       run: terraform apply -auto-approve tfplan
