@@ -26,7 +26,7 @@ resource "aws_instance" "dove-inst" {
       "sudo yum install wget unzip httpd zip -y",
       "sudo systemctl start httpd",
       "sudo systemctl enable httpd",
-      "wget https://www.free-css.com/assets/files/free-css-templates/download/page296/sperig.zipn",
+      "wget https://www.free-css.com/assets/files/free-css-templates/download/page296/sperig.zip",
       "unzip -o spering spering.zip",
       "sudo cp -r spering-html/* /var/www/html/",
       "sudo systemctl restart httpd"
