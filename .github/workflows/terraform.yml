@@ -45,7 +45,7 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR }}
       run: terraform plan -out=tfplan
 
-    - name: destroy Terraform
+    - name: apply Terraform
       if: github.ref == 'refs/heads/master'  # Only apply on the main branch
       working-directory: ${{ env.TF_WORKING_DIR }}
-      run: terraform destroy -auto-approve tfdestroy
+      run: terraform apply -auto-approve tfplan
