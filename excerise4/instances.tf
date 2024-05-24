@@ -1,4 +1,4 @@
-resource "aws_key_pair" "dove-key" {
+resource "aws_key_pair" "dove_key" {
   key_name   = "dovekay"
   public_key = file("dovekey.pub")
 }
