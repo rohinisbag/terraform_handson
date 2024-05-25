@@ -1,5 +1,7 @@
+# pipeline name
 name: Deploy Terraform
 
+# to start pipeline on event basis 
 on:
   push:
     branches:
@@ -8,13 +10,16 @@ on:
     branches:
       - master
 
+# jobs means stages
 jobs:
-  terraform:
+  terraform:  #job name
+
+    # online server provided by github to run application code 
     runs-on: ubuntu-latest
 
-    env:
+    env:  #env variable to use while runing pipeline
       TF_VERSION: 1.1.0  # Specify your Terraform version here
-      TF_WORKING_DIR: ./excerise5/ # Path to your Terraform code directory
+      TF_WORKING_DIR: . # Path to your Terraform code directory
 
     steps:
     - name: Checkout code
@@ -32,9 +37,19 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1  # Specify your AWS region here
 
+
+    - name: Run a multi-line script in stage1
+      run: |
+        ls -la 
+        pwd
+        tree
+
     - name: Initialize Terraform
       working-directory: ${{ env.TF_WORKING_DIR }}
-      run: terraform init
+      run: |
+        pwd
+        ls -la
+        terraform init
 
     - name: Validate Terraform
       working-directory: ${{ env.TF_WORKING_DIR }}
@@ -44,8 +59,8 @@ jobs:
       id: plan
       working-directory: ${{ env.TF_WORKING_DIR }}
       run: terraform plan -out=tfplan
-
-    - name: apply Terraform
-      if: github.ref == 'refs/heads/master'  # Only apply on the main branch
-      working-directory: ${{ env.TF_WORKING_DIR }}
-      run: terraform apply -auto-approve tfplan
+      
+    # - name: apply Terraform
+    #   if: github.ref == 'refs/heads/master'  # Only apply on the main branch
+    #   working-directory: ${{ env.TF_WORKING_DIR }}
+    #   run: terraform apply -auto-approve tfplan
