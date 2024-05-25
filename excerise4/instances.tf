@@ -40,9 +40,9 @@ resource "aws_instance" "excerise4-inst" {
 } 
 
 output "PublicIP" {
-  value = aws_instance.dove-inst.public_ip
+  value = aws_instance.excerise4-inst.public_ip
 }
 
 output "PrivateIP" {
-  value = aws_instance.dove-inst.private_ip
+  value = aws_instance.excerise4-inst.private_ip
 }
