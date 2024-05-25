@@ -12,7 +12,7 @@ on:
 
 # jobs means stages
 jobs:
-  terraform:  #job name
+  excerise1:  #job name
 
     # online server provided by github to run application code 
     runs-on: ubuntu-latest
