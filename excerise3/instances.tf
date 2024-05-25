@@ -1,13 +1,13 @@
-resource "aws_key_pair" "dove-key" {
-  key_name   = "dovekay"
+resource "aws_key_pair" "excerise3-key" {
+  key_name   = "excerise3-key"
   public_key = file("dovekey.pub")
 }
 
-resource "aws_instance" "dove-inst" {
+resource "aws_instance" "excerise3-inst" {
   ami                    = var.AMIS[var.REGION]
   instance_type          = "t2.micro"
   availability_zone      = var.ZONE1
-  key_name               = aws_key_pair.dove-key.key_name
+  key_name               = aws_key_pair.excerise3-key.key_name
   vpc_security_group_ids = ["sg-02a108efb4a34e9fc"]
   tags = {
     Name    = "Dove-Instance"
