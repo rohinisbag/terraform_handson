@@ -49,24 +49,24 @@ jobs:
         tree
 
     - name: Initialize Terraform
-      working-directory: ${{ env.TF_WORKING_DIR }}
+      working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
       run: |
         pwd
         ls -la
         terraform init
 
     - name: Validate Terraform
-      working-directory: ${{ env.TF_WORKING_DIR }}
+      working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
       run: terraform validate
 
     - name: Plan Terraform
       id: plan
-      working-directory: ${{ env.TF_WORKING_DIR }}
+      working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
       run: terraform plan -out=tfplan
       
     - name: apply Terraform
       if: github.ref == 'refs/heads/master'  # Only apply on the main branch
-      working-directory: ${{ env.TF_WORKING_DIR }}
+      working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
       run: terraform apply -auto-approve tfplan
 
 
