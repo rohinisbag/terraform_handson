@@ -5,7 +5,7 @@ resource "aws_instance" "dove-inst" {
   key_name               = "dove-key"
   vpc_security_group_ids = ["sg-02a108efb4a34e9fc"]
   tags = {
-    Name        = "Dove-Instance",
+    Name        = "excerise2-Instance",
     
   }
 }

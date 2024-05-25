@@ -9,7 +9,7 @@ resource "aws_instance" "intro" {
   key_name               = "dove_key"
   vpc_security_group_ids = ["sg-02a108efb4a34e9fc"]
   tags = {
-    Name        = "Dove-Instance",
+    Name        = "excerise1-instance",
     pagal_aurat = "Rohini"
   }
 
