@@ -10,7 +10,7 @@ resource "aws_instance" "excerise4-inst" {
   key_name               = aws_key_pair.excerise4-key.key_name
   vpc_security_group_ids = ["sg-02a108efb4a34e9fc"]
   tags = {
-    Name    = "excerise3-Instance"
+    Name    = "excerise4-Instance"
     Project = "Dove"
   }
 
