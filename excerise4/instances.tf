@@ -23,12 +23,12 @@ resource "aws_instance" "dove-inst" {
 
     inline = [
       "chmod u+x /tmp/web.sh",
-      "sudo yum install wget unzip httpd -y",
+      "sudo yum install wget unzip httpd  -y",
       "sudo systemctl start httpd",
       "sudo systemctl enable httpd",
-      "wget https://www.tooplate.com/zip-templates/2117_infinite_loop.zip",
-      "unzip -o 2117_infinite_loop.zip",
-      "sudo cp -r 2117_infinite_loop/* /var/www/html/",
+      "wget https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip",
+      "unzip -o healet.zip",
+      "sudo cp -r healet-html/* /var/www/html/",
       "sudo systemctl restart httpd"
     ]
   }
