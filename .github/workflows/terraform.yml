@@ -64,10 +64,10 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
       run: terraform plan -out=tfplan
       
-    - name: apply Terraform
-      if: github.ref == 'refs/heads/master'  # Only apply on the main branch
-      working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
-      run: terraform apply -auto-approve tfplan
+    # - name: apply Terraform 
+    #   if: github.ref == 'refs/heads/master'  # Only apply on the main branch
+    #   working-directory: ${{ env.TF_WORKING_DIR_EX1 }}
+    #   run: terraform apply -auto-approve tfplan
 
 
   excerise2:  #job name
@@ -122,10 +122,10 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR_EX2}}
       run: terraform plan -out=tfplan
       
-    - name: apply Terraform
-      if: github.ref == 'refs/heads/master'  # Only apply on the main branch
-      working-directory: ${{ env.TF_WORKING_DIR_EX2 }}
-      run: terraform apply -auto-approve tfplan
+    # - name: apply Terraform
+    #   if: github.ref == 'refs/heads/master'  # Only apply on the main branch
+    #   working-directory: ${{ env.TF_WORKING_DIR_EX2 }}
+    #   run: terraform apply -auto-approve tfplan
 
   excerise3:  #job name
 
@@ -179,10 +179,10 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR_EX3}}
       run: terraform plan -out=tfplan
       
-    - name: apply Terraform
-      if: github.ref == 'refs/heads/master'  # Only apply on the main branch
-      working-directory: ${{ env.TF_WORKING_DIR_EX3 }}
-      run: terraform apply -auto-approve tfplan
+    # - name: apply Terraform
+    #   if: github.ref == 'refs/heads/master'  # Only apply on the main branch
+    #   working-directory: ${{ env.TF_WORKING_DIR_EX3 }}
+    #   run: terraform apply -auto-approve tfplan
 
   excerise4:  #job name
 
