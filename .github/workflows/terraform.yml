@@ -127,7 +127,7 @@ jobs:
       working-directory: ${{ env.TF_WORKING_DIR_EX2 }}
       run: terraform apply -auto-approve tfplan
 
-excerise3:  #job name
+  excerise3:  #job name
 
     # online server provided by github to run application code 
     runs-on: ubuntu-latest
@@ -184,7 +184,7 @@ excerise3:  #job name
       working-directory: ${{ env.TF_WORKING_DIR_EX3 }}
       run: terraform apply -auto-approve tfplan
 
-excerise4:  #job name
+  excerise4:  #job name
 
     # online server provided by github to run application code 
     runs-on: ubuntu-latest
